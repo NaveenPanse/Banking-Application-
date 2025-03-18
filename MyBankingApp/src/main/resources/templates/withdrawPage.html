@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withdraw Money</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <div class="card shadow-lg p-4 rounded-4">
+      <h2 class="text-center text-primary mb-4">Withdraw Funds</h2>
+      
+      <form action="/withdraw" method="post">
+      
+      <!-- User account field -->
+      <div class="mb-3">
+    <label for="accountNo" class="form-label fw-bold">Account Number</label>
+    <input type="text" class="form-control" id="accountNo" name="accountNo" placeholder="Enter Account Number" required 
+           pattern="[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}" 
+           title="Please enter a valid UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)">
+</div>
+
+        <!-- Username Field -->
+        <div class="mb-3">
+          <label for="username" class="form-label fw-bold">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+        </div>
+        
+        <!-- Amount Field -->
+        <div class="mb-3">
+          <label for="amount" class="form-label fw-bold">Amount</label>
+          <input type="number" class="form-control" id="amount" name="amount" placeholder="Enter Amount" min="0" step="0.01" required>
+        </div>
+
+        <!-- Deposit Button -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-success px-4">Withdraw</button>
+        </div>
+      </form>
+      
+      <!-- Back to Account Button -->
+      <div class="text-center mt-3">
+        <a href="http://localhost:8080/login-Page" class="btn btn-secondary">Back </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
